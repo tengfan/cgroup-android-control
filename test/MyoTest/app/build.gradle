@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.cgroup.myotest"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    repositories {
+        maven {
+            url '/Users/ricardo/Desktop/MyoTest/myo-android-sdk-0.10.0/myorepository'
+        }
+    }
+    compile 'com.thalmic:myosdk:0.10.+@aar'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
